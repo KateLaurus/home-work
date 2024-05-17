@@ -1,0 +1,7 @@
+numbers = [0, 99, 100, 53, 44, 23, 4, 8, 16, 15, 77, 51]
+
+def is_odd_and_greater_than_50(num):
+    return num > 50 and num % 2 != 0
+
+odd_numbers_greater_than_50 = filter(is_odd_and_greater_than_50, numbers)
+print(list(odd_numbers_greater_than_50))
