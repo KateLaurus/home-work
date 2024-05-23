@@ -1,0 +1,34 @@
+class Animal:
+    count = 0
+
+    def __init__(self):
+        Animal.count += 1
+
+    def voice(self):
+        pass
+
+    @staticmethod
+    def get_total_instances():
+        print(f"Всего созданных экземпляров: {Animal.count}")
+
+class Dog(Animal):
+    def voice(self):
+        print("Aw-aw")
+
+class Cat(Animal):
+    def voice(self):
+        print("Meeeow")
+
+class Fox(Animal):
+    def voice(self):
+        print("Rinrinningin")
+
+dog = Dog()
+cat = Cat()
+fox = Fox()
+
+dog.voice()
+cat.voice()
+fox.voice()
+
+Animal.get_total_instances()
