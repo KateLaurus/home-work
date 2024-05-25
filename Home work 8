@@ -1,0 +1,19 @@
+# В этой части кода происходит создание нового текстового файла с содержимым "123456789"
+with open("file1.txt", "w") as file:
+    file.write("123456789")
+
+# А тут файла с содержимым в обратном порядке
+with open("file1.txt", "r") as file:
+    content = file.read()
+
+with open("file2.txt", "w") as file:
+    file.write(content[::-1])
+
+# Далее я вывожу содержимого обоих файлов
+print("Содержимое файла 1:")
+with open("file1.txt", "r") as file:
+    print(file.read())
+
+print("\nСодержимое файла 2:")
+with open("file2.txt", "r") as file:
+    print(file.read())
