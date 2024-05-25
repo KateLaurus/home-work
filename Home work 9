@@ -1,0 +1,28 @@
+import threading
+import time
+
+def thread_1():
+
+    print("Поток 1 страт")
+    for i in range(10, 0, -1):
+        print(f"Поток 1: {i}")
+        time.sleep(1)
+    print("Поток 1 конец")
+
+def thread_2():
+
+    print("Поток 2 старт")
+    for i in range(10, 0, -1):
+        print(f"Поток 2: {i}")
+        time.sleep(1)
+    print("Поток 2 конец")
+
+t1 = threading.Thread(target=thread_1)
+t2 = threading.Thread(target=thread_2)
+t1.start()
+t2.start()
+
+t1.join()
+t2.join()
+
+print("Домашняя работа заврешена")
